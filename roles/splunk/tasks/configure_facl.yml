@@ -34,7 +34,7 @@
       become: true
 
     - name: Allow splunk to read /var/log/audit.log
-      ini_file:
+      community.general.ini_file:
         path: /etc/audit/auditd.conf
         section: null
         option: log_group
