@@ -62,7 +62,7 @@
 
     - name: Setting least priviledged mode
       set_fact:
-        least_privileged: true
+        least_privileged: false
       when: >
         (splunk_package_version is version(9.0, '>=') and splunk_install_type == "uf") or
         splunk_install_type == "full" and splunk_nix_user == "root"
