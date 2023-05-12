@@ -31,7 +31,7 @@
     when:
       - splunk_license_group=="Enterprise"
   - name: "Remove license manager uri when using local license"
-    ini_file:
+    community.general.ini_file:
       path: "{{ splunk_home }}/etc/system/local/server.conf"
       section: license
       option: "{{ item }}"
@@ -43,7 +43,7 @@
       - master_uri
     become: true
   - name: Configure License Group
-    ini_file:
+    community.general.ini_file:
       path: "{{ splunk_home }}/etc/system/local/server.conf"
       section: license
       option: active_group
@@ -59,7 +59,7 @@
 - name: Configure License Peer
   block:
   - name: "Set license {{ mode_option }}"
-    ini_file:
+    community.general.ini_file:
       path: "{{ splunk_home }}/etc/system/local/server.conf"
       section: license
       option: "{{ mode_option }}"
@@ -76,7 +76,7 @@
       req_secret_option: pass4SymmKey
 
   - name: Set pass4SymmKey to match LM
-    ini_file:
+    community.general.ini_file:
       path: "{{ splunk_home }}/etc/system/local/server.conf"
       section: general
       option: pass4SymmKey
