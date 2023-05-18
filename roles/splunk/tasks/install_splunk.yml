@@ -73,3 +73,6 @@
 
 - name: Include post-install tasks
   include_tasks: post_install.yml
+
+- name: Start splunk once installed
+  include_tasks: splunk_start.yml
