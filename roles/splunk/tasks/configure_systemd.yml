@@ -1,6 +1,6 @@
 ---
 - name: Update the systemd file for Splunk
-  community.general.ini_file:
+  ini_file:
     path: "/etc/systemd/system/{{ splunk_service }}.service"
     section: Service
     option: "{{ item.option }}"

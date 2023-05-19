@@ -61,7 +61,7 @@
       - reload systemctl daemon
       - start splunk
 
-  - name: Update systemd file
-    include_tasks: configure_systemd.yml
-    when:
-      - desired_start_method == "systemd"
+  #- name: Update systemd file
+   # include_tasks: configure_systemd.yml
+    #when:
+     # - desired_start_method == "systemd"
